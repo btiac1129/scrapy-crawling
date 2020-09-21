@@ -12,6 +12,7 @@ app.debug = True
 def hello():
     return "Hello World!"
 
+# 수집한 데이터를 제공할 수 있는 수단 - url 경로, url 쿼리.
 @app.route("/hello") # url 쿼리
 def hello_to_get_param():
     name = request.args.get("name")
@@ -20,7 +21,6 @@ def hello_to_get_param():
 @app.route("/hello/<name>") # url 경로
 def hello_to(name):
     return "Hello, {}!".format(name)
-
 
 if __name__ == "__main__":
     app.run()
